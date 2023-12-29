@@ -7,8 +7,15 @@ email_book = [{'first':'Reuven', 'last':'Lerner', 'email':'reuven@lerner.co.il'}
 'email':'president@whitehouse.gov'}, {'first':'Vladimir', 'last':'Putin',
 'email':'president@kremvax.ru'} ]
 
-for record in email_book:
-    print(record)
+def sorter(collection):
+    return sorted(collection,key=itemgetter('first','last'))
 
-x = itemgetter('first')(email_book[0])
-print(x)
+processed_email_book = sorter(email_book)
+
+for book in email_book:
+    print(book)
+
+print('\n')
+
+for book in processed_email_book:
+    print(book)
